@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Last question in database{% endblock %}
+{% block content %}
+    <h1>Last question in database</h1>
+    <p>The last question in database contains data:</p>
+    <p>ID : {{ id }}</p>
+    <p>Question : {{ question }}</p>
+    <p>Answer : {{ answer }}</p>
+    <p>Created at : {{ created_at }}</p>
+    <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
+{% endblock %}

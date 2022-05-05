@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Main page{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <h3>Send POST</h3>
+        <p>Here you can send a POST request with content like {"questions_num": integer}:</p>
+        <p>Or send POST request to 0.0.0.1:8000/q</p>
+        <p>Example: 0.0.0.1:8000/q?questions_num=3</p>
+        <a href="{% url 'form' %}" class="btn btn-primary my-2">POST</a>
+    </div>
+    <div class="bg-white"><br></div>
+    <div class="jumbotron">
+        <h3>Get last question</h3>
+        <p>Get the last question saved in database:</p>
+        <a href="{% url 'last' %}" class="btn btn-primary my-2">Get last question</a>
+    </div>
+{% endblock %}

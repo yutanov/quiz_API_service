@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Nums{% endblock %}
+{% block content %}
+    <h1>Nums</h1>
+    <p>Please, use the following form to send the nums of questions:</p>
+    <form action="{% url 'form' %}" method="post">
+        {{ form.as_p }}
+        <p><input type="submit" class="btn btn-primary my-2 mx-2" value="Send">
+            <a href="{% url 'home' %}" class="btn btn-primary my-2 mx-2">Back</a></p>
+    </form>
+{% endblock %}
