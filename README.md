@@ -27,6 +27,9 @@
 Перейдите в каталог репозитория
 > cd quiz_API_service
 
+Создайте образ контейнера
+> docker-compose build
+
 Запустите миграции
 > docker-compose run web python ./manage.py migrate
 
