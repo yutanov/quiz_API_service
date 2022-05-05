@@ -27,14 +27,11 @@
 Перейдите в каталог репозитория
 > cd quiz_API_service
 
-Создайте образ контейнера
-> docker-compose build
+Запустите миграции
+> docker-compose run web python ./manage.py migrate
 
 Изменените права доступа к файлам
 > sudo chown -R $USER:$USER .
-
-Запустите миграции
-> docker-compose run web python ./manage.py migrate
 
 Запустите контейнер
 > docker-compose up
