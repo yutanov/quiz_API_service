@@ -43,11 +43,6 @@
 
   > docker-compose run web python ./manage.py migrate
 
-  <li>Изменение прав доступа к файлам</li>
-
-  > sudo chown -R $USER:$USER .
-
-
 <h3>Запустите контейнер</h3>
 
 > docker-compose up
