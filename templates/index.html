@@ -11,7 +11,9 @@
     <div class="bg-white"><br></div>
     <div class="jumbotron">
         <h3>Get last question</h3>
-        <p>Get the last question saved in database:</p>
+        <p>Get the last question saved in database.</p>
+        <p>Or send GET request to 0.0.0.1:8000/last</p>
+        <p>Example: 0.0.0.1:8000/last</p>
         <a href="{% url 'last' %}" class="btn btn-primary my-2">Get last question</a>
     </div>
 {% endblock %}

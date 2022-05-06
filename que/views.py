@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from que import serializers
 from .models import Quiz
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .forms import NumsForm
 import requests
 
@@ -65,9 +65,26 @@ def last_object(request):
         context['question'] = last_obj.question
         context['answer'] = last_obj.answer
         context['created_at'] = last_obj.created_at
+        return context
+    else:
+        return None
+
+
+def view_last_obj(request):
+    context = last_object(request)
+    if context:
         return render(request, 'last.html', context)
     else:
         return render(request, 'no_last.html')
+
+def get_last_obj(request):
+    if request.method == 'GET':
+        context = last_object(request)
+        if context:
+            return JsonResponse(context)
+        return JsonResponse('{}')
+    else:
+        return render(request, 'index.html')
 
 
 def index(request):
