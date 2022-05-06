@@ -21,25 +21,41 @@
 
 <h2>Установка</h2>
 
-Склонируйте репозиторий
+<h3>Склонируйте репозиторий</h3>
+
 > git clone https://github.com/yutanov/quiz_API_service.git
 
-Перейдите в каталог репозитория
+<h3>Перейдите в каталог репозитория</h3>
+
 > cd quiz_API_service
 
-Создайте образ контейнера
-> docker-compose build
+<h3>Запустите подтовку контейнера</h3>
 
-Запустите миграции
-> docker-compose run web python ./manage.py migrate
+> make install
 
-Изменените права доступа к файлам
-> sudo chown -R $USER:$USER .
+Данная команда выполняет следующие команды:
 
-Запустите контейнер
+  <li>Создание контейнера</li>
+
+  > docker-compose build
+
+  <li>Запуск миграции</li>
+
+  > docker-compose run web python ./manage.py migrate
+
+  <li>Изменение прав доступа к файлам</li>
+
+  > sudo chown -R $USER:$USER .
+
+
+<h3>Запустите контейнер</h3>
+
 > docker-compose up
 
-Перейдите по адресу http://0.0.0.0:8000/
+<h3>Перейдите по адресу</h3>
 
-Остановка контейнера
+http://0.0.0.0:8000/
+
+<h3>Остановка контейнера</h3>
+
 > docker-compose down
