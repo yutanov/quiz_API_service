@@ -29,23 +29,17 @@
 
 > cd quiz_API_service
 
-<h3>Запустите подтовку контейнера</h3>
+<h3>Создание контейнера</h3>
 
-> make install
+> docker-compose build
 
-Данная команда выполняет следующие команды:
+<h3>Запуск миграции</h3>
 
-  <li>Создание контейнера</li>
+> docker-compose run web python ./manage.py migrate
 
-  > docker-compose build
+<h3>Изменение прав доступа к файлам</h3>
 
-  <li>Запуск миграции</li>
-
-  > docker-compose run web python ./manage.py migrate
-
-  <li>Изменение прав доступа к файлам</li>
-
-  > sudo chown -R $USER:$USER .
+> sudo chown -R $USER:$USER .
 
 
 <h3>Запустите контейнер</h3>
