@@ -45,8 +45,7 @@ def get_questions(request):
         data = send_request(request, num)
         save_data(request, data)
         return render(request, 'success.html')
-    else:
-        return HttpResponse('Something went wrong')
+    return HttpResponse('Something went wrong')
 
 
 def get_num_of_questions(request):
@@ -66,16 +65,16 @@ def last_object(request):
         context['answer'] = last_obj.answer
         context['created_at'] = last_obj.created_at
         return context
-    else:
-        return None
+
+    return None
 
 
 def view_last_obj(request):
     context = last_object(request)
     if context:
         return render(request, 'last.html', context)
-    else:
-        return render(request, 'no_last.html')
+
+    return render(request, 'no_last.html')
 
 def get_last_obj(request):
     if request.method == 'GET':
@@ -85,8 +84,8 @@ def get_last_obj(request):
         else:
             context = {}
             return JsonResponse(context)
-    else:
-        return render(request, 'index.html')
+
+    return render(request, 'index.html')
 
 
 def index(request):
@@ -99,4 +98,5 @@ def get_q(request):
         data = send_request(request, q)
         save_data(request, data)
         return render(request, 'success.html')
+    
     return render(request, 'index.html')
