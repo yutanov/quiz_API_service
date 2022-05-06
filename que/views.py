@@ -82,7 +82,9 @@ def get_last_obj(request):
         context = last_object(request)
         if context:
             return JsonResponse(context)
-        return JsonResponse('{}')
+        else:
+            context = {}
+            return JsonResponse(context)
     else:
         return render(request, 'index.html')
 
